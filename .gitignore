@@ -1,0 +1,8 @@
+# java specific
+*.class
+*.jar
+
+# project specific
+manifest.txt
+making_jar.txt
+
