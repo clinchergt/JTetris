@@ -5,9 +5,8 @@ import java.io.*;
 import java.awt.event.*;
 public class Keys implements KeyListener{
 	LinkedList<Integer> inputs, defaults;
-	FileInputStream input;
-	DataInputStream in;
-	public static int 
+	InputStream in;
+	public static int
 		HD = KeyEvent.VK_NUMPAD2,
 		LEFT = KeyEvent.VK_NUMPAD1,
 		RIGHT = KeyEvent.VK_NUMPAD3,
@@ -17,8 +16,7 @@ public class Keys implements KeyListener{
 		RESTART = KeyEvent.VK_R;
 	public void setDefaults(){
 		try{
-			input = new FileInputStream("/config/settings.txt");
-			in = new DataInputStream(input);
+			in = getClass().getResourceAsStream("/config/settings.txt");
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
 			LEFT = Integer.parseInt(br.readLine());
 			RIGHT = Integer.parseInt(br.readLine());
@@ -27,7 +25,7 @@ public class Keys implements KeyListener{
 			B = Integer.parseInt(br.readLine());
 			D = Integer.parseInt(br.readLine());
 			RESTART = Integer.parseInt(br.readLine());
-		}catch(Exception e){ System.out.println("FAIL");}
+		}catch(Exception e){ System.out.println(e.getMessage());}
 	}
 	public void keyPressed(KeyEvent e) {
 		if(defaults.contains(new Integer(e.getKeyCode())) && !inputs.contains(new Integer(e.getKeyCode()))){
