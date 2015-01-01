@@ -7,9 +7,9 @@ public class Keys implements KeyListener{
 	LinkedList<Integer> inputs, defaults;
 	InputStream in;
 	public static int
-		HD = KeyEvent.VK_NUMPAD2,
-		LEFT = KeyEvent.VK_NUMPAD1,
-		RIGHT = KeyEvent.VK_NUMPAD3,
+		HD = KeyEvent.VK_K,
+		LEFT = KeyEvent.VK_J,
+		RIGHT = KeyEvent.VK_L,
 		A = KeyEvent.VK_A,
 		B = KeyEvent.VK_S,
 		D = KeyEvent.VK_D,
