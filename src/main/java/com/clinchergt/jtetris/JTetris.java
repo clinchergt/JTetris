@@ -19,6 +19,8 @@ public class JTetris{
 	}
 	public void reset(){
 		field = new Field();
+		for(int i = 0; i < 4; i++)
+			history[i] = initialHistory[i];
 		currentPiece = new Piece(randomize(6));
 		nextOne = new Piece(randomize(6));
 		nextTwo = new Piece(randomize(6));
@@ -137,10 +139,7 @@ public class JTetris{
 					holdEnabled = false;
 				}
 				if(inputs.contains(restart) && !previousInputs.contains(restart)){
-					for(int i = 0; i < 4; i++)
-						history[i] = initialHistory[i];
 					reset();
-					countdown = 60;
 				}
 				previousInputs.clear();
 				while(inputs.size() != 0){
