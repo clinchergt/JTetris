@@ -14,7 +14,7 @@ public class Field{
 		for(int i = 19; i >= 0; i--){
 			if(field[0][i] && field[1][i] && field[2][i] && field[3][i] && field[4][i] &&
 			   field[5][i] && field[6][i] && field[7][i] && field[8][i] && field[9][i]){
-				
+
 				for(int j = i; j >= 1; j--){
 					for(int k = 0; k < 10; k++){
 						field[k][j] = field[k][j - 1];
@@ -48,5 +48,4 @@ public class Field{
 			field[p.x + p.xblocks[j]][i - 1 + p.yblocks[j]] = true;
 		}
 	}
-	
 }

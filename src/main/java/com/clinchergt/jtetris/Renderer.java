@@ -44,35 +44,35 @@ public class Renderer extends JFrame{
 			g.fill3DRect(170, 75, 85, 40, true);
 			for(int i = 0; i < 4; i++){
 				g.drawImage(block, //active piece
-							(game.currentPiece.x * 20) + 26 + (game.currentPiece.xblocks[i] * 20), 122 + (game.currentPiece.yblocks[i] * 20), 
-							(game.currentPiece.x * 20) + 46 + (game.currentPiece.xblocks[i] * 20), 142 + (game.currentPiece.yblocks[i] * 20), 
-							game.currentPiece.piece * 20, 0, 
+							(game.currentPiece.x * 20) + 26 + (game.currentPiece.xblocks[i] * 20), 122 + (game.currentPiece.yblocks[i] * 20),
+							(game.currentPiece.x * 20) + 46 + (game.currentPiece.xblocks[i] * 20), 142 + (game.currentPiece.yblocks[i] * 20),
+							game.currentPiece.piece * 20, 0,
 							(game.currentPiece.piece * 20) + 20, 20, null);
 				g.drawImage(block, //ghost piece
-							(game.currentPiece.x * 20) + 26 + (game.currentPiece.xblocks[i] * 20), (game.field.placePiece(game.currentPiece) * 20) + 102 + (game.currentPiece.yblocks[i] * 20), 
-							(game.currentPiece.x * 20) + 46 + (game.currentPiece.xblocks[i] * 20), (game.field.placePiece(game.currentPiece) * 20) + 122 + (game.currentPiece.yblocks[i] * 20), 
-							game.currentPiece.piece * 20, 20, 
+							(game.currentPiece.x * 20) + 26 + (game.currentPiece.xblocks[i] * 20), (game.field.placePiece(game.currentPiece) * 20) + 102 + (game.currentPiece.yblocks[i] * 20),
+							(game.currentPiece.x * 20) + 46 + (game.currentPiece.xblocks[i] * 20), (game.field.placePiece(game.currentPiece) * 20) + 122 + (game.currentPiece.yblocks[i] * 20),
+							game.currentPiece.piece * 20, 20,
 							(game.currentPiece.piece * 20) + 20, 40, null);
 				g.drawImage(block, //nextOne
-							(game.nextOne.x * 20) + 26 + (game.nextOne.xblocks[i] * 20), 65 + (game.nextOne.yblocks[i] * 20), 
-							(game.nextOne.x * 20) + 46 + (game.nextOne.xblocks[i] * 20), 85 + (game.nextOne.yblocks[i] * 20), 
-							game.nextOne.piece * 20, 0, 
+							(game.nextOne.x * 20) + 26 + (game.nextOne.xblocks[i] * 20), 65 + (game.nextOne.yblocks[i] * 20),
+							(game.nextOne.x * 20) + 46 + (game.nextOne.xblocks[i] * 20), 85 + (game.nextOne.yblocks[i] * 20),
+							game.nextOne.piece * 20, 0,
 							(game.nextOne.piece * 20) + 20, 20, null);
 				g.drawImage(block, //nexttwo
-							170 + (game.nextTwo.xblocks[i] * 10), 85 + (game.nextTwo.yblocks[i] * 10), 
-							180 + (game.nextTwo.xblocks[i] * 10), 95 + (game.nextTwo.yblocks[i] * 10), 
-							game.nextTwo.piece * 20, 0, 
+							170 + (game.nextTwo.xblocks[i] * 10), 85 + (game.nextTwo.yblocks[i] * 10),
+							180 + (game.nextTwo.xblocks[i] * 10), 95 + (game.nextTwo.yblocks[i] * 10),
+							game.nextTwo.piece * 20, 0,
 							(game.nextTwo.piece * 20) + 20, 20, null);
 				g.drawImage(block, //nextthree
-							210 + (game.nextThree.xblocks[i] * 10), 85 + (game.nextThree.yblocks[i] * 10), 
-							220 + (game.nextThree.xblocks[i] * 10), 95 + (game.nextThree.yblocks[i] * 10), 
-							game.nextThree.piece * 20, 0, 
+							210 + (game.nextThree.xblocks[i] * 10), 85 + (game.nextThree.yblocks[i] * 10),
+							220 + (game.nextThree.xblocks[i] * 10), 95 + (game.nextThree.yblocks[i] * 10),
+							game.nextThree.piece * 20, 0,
 							(game.nextThree.piece * 20) + 20, 20, null);
 				if(game.holdPiece != null)
 					g.drawImage(block, //holdpiece
-								35 + (game.holdPiece.xblocks[i] * 10), 85 + (game.holdPiece.yblocks[i] * 10), 
-								45 + (game.holdPiece.xblocks[i] * 10), 95 + (game.holdPiece.yblocks[i] * 10), 
-								game.holdPiece.piece * 20, 0, 
+								35 + (game.holdPiece.xblocks[i] * 10), 85 + (game.holdPiece.yblocks[i] * 10),
+								45 + (game.holdPiece.xblocks[i] * 10), 95 + (game.holdPiece.yblocks[i] * 10),
+								game.holdPiece.piece * 20, 0,
 								(game.holdPiece.piece * 20) + 20, 20, null);
 			}
 			g.setColor(Color.GRAY);

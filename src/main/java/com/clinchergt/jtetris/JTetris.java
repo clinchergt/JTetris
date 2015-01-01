@@ -149,13 +149,13 @@ public class JTetris{
 			}
 		}
 	}
-	
+
 	public int randomize(int rerolls){
 		int retries, trial;
 		trial = 0;
 		for(int i = 0; i < rerolls; i++){
 			trial = randomizer.nextInt(7);
-			if(!contains(trial, history)) 
+			if(!contains(trial, history))
 				i = rerolls;
 		}
 		for(int i = 3; i >= 1;){

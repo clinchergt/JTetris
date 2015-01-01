@@ -62,7 +62,7 @@ public class Piece{
 			rotateLeft();
 		switch(piece){
 			case 0: if(length == 4) length = 1;
-					else  length = 4; 
+					else  length = 4;
 					break;
 			case 6: break;
 			default: if(length == 3) length = 2;
