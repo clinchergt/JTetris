@@ -1,3 +1,5 @@
+package com.clinchergt.jtetris;
+
 import java.util.LinkedList;
 import java.io.*;
 import java.awt.event.*;
@@ -15,7 +17,7 @@ public class Keys implements KeyListener{
 		RESTART = KeyEvent.VK_R;
 	public void setDefaults(){
 		try{
-			input = new FileInputStream("settings.txt");
+			input = new FileInputStream("/config/settings.txt");
 			in = new DataInputStream(input);
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
 			LEFT = Integer.parseInt(br.readLine());

@@ -1,3 +1,5 @@
+package com.clinchergt.jtetris;
+
 import java.awt.event.*;
 import java.io.*;
 public class CustomKeys implements KeyListener{

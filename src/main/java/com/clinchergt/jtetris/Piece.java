@@ -1,3 +1,5 @@
+package com.clinchergt.jtetris;
+
 public class Piece{
 	int piece, cstate, x, length;
 	int[] xblocks, yblocks;

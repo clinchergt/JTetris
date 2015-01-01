@@ -1,3 +1,5 @@
+package com.clinchergt.jtetris;
+
 import java.util.Random;
 import java.util.LinkedList;
 import java.awt.event.*;

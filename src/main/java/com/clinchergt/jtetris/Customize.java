@@ -1,3 +1,5 @@
+package com.clinchergt.jtetris;
+
 import javax.swing.*;
 public class Customize extends JFrame{
 	public Customize(){

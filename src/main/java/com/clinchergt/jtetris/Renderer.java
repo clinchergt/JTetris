@@ -1,3 +1,5 @@
+package com.clinchergt.jtetris;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -32,7 +34,7 @@ public class Renderer extends JFrame{
 			if(!game.gameOver)
 				game.process(keys.getInputs());
 			g = buffer.getDrawGraphics();
-			block = (new ImageIcon(getClass().getResource("blocks.jpg"))).getImage();
+			block = (new ImageIcon(getClass().getResource("/resources/blocks.jpg"))).getImage();
 			g.setColor(this.getBackground());
 			g.fillRect(0, 0, this.getWidth(), this.getHeight());
 			g.setColor(Color.BLACK);

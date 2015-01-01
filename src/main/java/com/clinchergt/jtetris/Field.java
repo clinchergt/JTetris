@@ -1,3 +1,5 @@
+package com.clinchergt.jtetris;
+
 import java.util.Arrays;
 public class Field{
 	private boolean[][] field;
