@@ -18,6 +18,7 @@ public class JTetris{
 		reset();
 	}
 	public void reset(){
+		gameOver = false;
 		field = new Field();
 		for(int i = 0; i < 4; i++)
 			history[i] = initialHistory[i];
@@ -49,7 +50,7 @@ public class JTetris{
 				das = 0;
 			if(countdown == 0)
 				time = System.currentTimeMillis();
-		}else{
+		}else if(!gameOver){
 			if(inputs.size() == 0){
 				previousInputs.clear();
 				das = 0;
@@ -138,14 +139,16 @@ public class JTetris{
 					}
 					holdEnabled = false;
 				}
-				if(inputs.contains(restart) && !previousInputs.contains(restart)){
-					reset();
-				}
-				previousInputs.clear();
-				while(inputs.size() != 0){
-					previousInputs.add((Integer)inputs.remove());
-				}
 			}
+		}
+
+		if(inputs.contains(restart) && !previousInputs.contains(restart)){
+			reset();
+		}
+
+		previousInputs.clear();
+		while(inputs.size() != 0){
+			previousInputs.add((Integer)inputs.remove());
 		}
 	}
 

@@ -31,8 +31,7 @@ public class Renderer extends JFrame{
 		Font font = new Font("Tahoma", Font.BOLD, 40);
 		this.addKeyListener(keys);
 		while(true){
-			if(!game.gameOver)
-				game.process(keys.getInputs());
+			game.process(keys.getInputs());
 			g = buffer.getDrawGraphics();
 			block = (new ImageIcon(getClass().getResource("/resources/blocks.jpg"))).getImage();
 			g.setColor(this.getBackground());
