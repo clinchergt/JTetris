@@ -33,7 +33,7 @@ public class Field{
 		return field;
 	}
 	public int placePiece(Piece p){
-		for(int i = 0; i <20; i++){
+		for(int i = 0; i < 20; i++){
 			if((field[p.x + p.xblocks[0]][i + p.yblocks[0]] ||
 				field[p.x + p.xblocks[1]][i + p.yblocks[1]] ||
 				field[p.x + p.xblocks[2]][i + p.yblocks[2]] ||
@@ -46,6 +46,22 @@ public class Field{
 	public void lockPiece(Piece p, int i){
 		for(int j = 0; j < 4; j++){
 			field[p.x + p.xblocks[j]][i - 1 + p.yblocks[j]] = true;
+		}
+	}
+
+	public boolean spawnPiece(Piece p){
+		if (placePiece(p) == 0){
+			return false;
+		}
+
+		return true;
+	}
+
+	public void printField(){
+		for(int i = 0; i < field.length; i++){
+			for(int j = 0; j < field[i].length; j++)
+				System.out.printf("|%b|", field[i][j]);
+			System.out.println();
 		}
 	}
 }

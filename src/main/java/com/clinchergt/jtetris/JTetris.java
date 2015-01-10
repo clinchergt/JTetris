@@ -59,10 +59,12 @@ public class JTetris{
 				if(inputs.contains(hd) && !previousInputs.contains(hd)){
 					field.lockPiece(currentPiece, field.placePiece(currentPiece));
 					lines += field.clearLines();
-					if(lines >= 40){
+					currentPiece = new Piece(nextOne);
+
+					if(lines >= 40 || !field.spawnPiece(currentPiece)){
 						gameOver = true;
 					}
-					currentPiece = new Piece(nextOne);
+
 					nextOne = new Piece(nextTwo);
 					nextTwo = new Piece(nextThree);
 					nextThree = new Piece(randomize(6));
