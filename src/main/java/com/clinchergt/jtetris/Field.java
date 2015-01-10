@@ -4,14 +4,14 @@ import java.util.Arrays;
 public class Field{
 	private boolean[][] field;
 	public Field(){
-		field = new boolean[10][21];
+		field = new boolean[10][25];
 		for(int i = 0; i < 10; i++){
-			field[i][20] = true;
+			field[i][24] = true;
 		}
 	}
 	public int clearLines(){
 		int linesCleared = 0;
-		for(int i = 19; i >= 0; i--){
+		for(int i = 23; i >= 0; i--){
 			if(field[0][i] && field[1][i] && field[2][i] && field[3][i] && field[4][i] &&
 			   field[5][i] && field[6][i] && field[7][i] && field[8][i] && field[9][i]){
 
@@ -33,7 +33,7 @@ public class Field{
 		return field;
 	}
 	public int placePiece(Piece p){
-		for(int i = 0; i < 20; i++){
+		for(int i = 0; i < 24; i++){
 			if((field[p.x + p.xblocks[0]][i + p.yblocks[0]] ||
 				field[p.x + p.xblocks[1]][i + p.yblocks[1]] ||
 				field[p.x + p.xblocks[2]][i + p.yblocks[2]] ||
@@ -50,7 +50,7 @@ public class Field{
 	}
 
 	public boolean spawnPiece(Piece p){
-		if (placePiece(p) == 0){
+		if (placePiece(p) == 4){
 			return false;
 		}
 
@@ -63,5 +63,7 @@ public class Field{
 				System.out.printf("|%b|", field[i][j]);
 			System.out.println();
 		}
+
+		System.out.println();
 	}
 }

@@ -48,8 +48,8 @@ public class Renderer extends JFrame{
 							game.currentPiece.piece * 20, 0,
 							(game.currentPiece.piece * 20) + 20, 20, null);
 				g.drawImage(block, //ghost piece
-							(game.currentPiece.x * 20) + 26 + (game.currentPiece.xblocks[i] * 20), (game.field.placePiece(game.currentPiece) * 20) + 102 + (game.currentPiece.yblocks[i] * 20),
-							(game.currentPiece.x * 20) + 46 + (game.currentPiece.xblocks[i] * 20), (game.field.placePiece(game.currentPiece) * 20) + 122 + (game.currentPiece.yblocks[i] * 20),
+							(game.currentPiece.x * 20) + 26 + (game.currentPiece.xblocks[i] * 20), (game.field.placePiece(game.currentPiece) * 20) + 22 + (game.currentPiece.yblocks[i] * 20),
+							(game.currentPiece.x * 20) + 46 + (game.currentPiece.xblocks[i] * 20), (game.field.placePiece(game.currentPiece) * 20) + 42 + (game.currentPiece.yblocks[i] * 20),
 							game.currentPiece.piece * 20, 20,
 							(game.currentPiece.piece * 20) + 20, 40, null);
 				g.drawImage(block, //nextOne
@@ -76,9 +76,9 @@ public class Renderer extends JFrame{
 			}
 			g.setColor(Color.GRAY);
 			for(int i = 0; i < 10; i++){
-				for(int j = 0; j < 20; j++){
+				for(int j = 4; j < 24; j++){
 					if(game.field.getField()[i][j])
-						g.fill3DRect(26 + i * 20, 122 + (j * 20), 20, 20, true);
+						g.fill3DRect(26 + i * 20, 42 + (j * 20), 20, 20, true);
 				}
 			}
 			g.setFont(font);
