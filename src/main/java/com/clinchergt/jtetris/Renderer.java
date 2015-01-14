@@ -42,16 +42,9 @@ public class Renderer extends JFrame{
 			g.fill3DRect(80, 55, 90, 60, true); //previews
 			g.fill3DRect(170, 75, 85, 40, true);
 			for(int i = 0; i < 4; i++){
-				g.drawImage(block, //active piece
-							(game.currentPiece.x * 20) + 26 + (game.currentPiece.xblocks[i] * 20), 122 + (game.currentPiece.yblocks[i] * 20),
-							(game.currentPiece.x * 20) + 46 + (game.currentPiece.xblocks[i] * 20), 142 + (game.currentPiece.yblocks[i] * 20),
-							game.currentPiece.piece * 20, 0,
-							(game.currentPiece.piece * 20) + 20, 20, null);
-				g.drawImage(block, //ghost piece
-							(game.currentPiece.x * 20) + 26 + (game.currentPiece.xblocks[i] * 20), (game.field.placePiece(game.currentPiece) * 20) + 22 + (game.currentPiece.yblocks[i] * 20),
-							(game.currentPiece.x * 20) + 46 + (game.currentPiece.xblocks[i] * 20), (game.field.placePiece(game.currentPiece) * 20) + 42 + (game.currentPiece.yblocks[i] * 20),
-							game.currentPiece.piece * 20, 20,
-							(game.currentPiece.piece * 20) + 20, 40, null);
+				renderPiece(g, block, game.currentPiece, 26, 22, 20); //ghost piece
+				renderPiece(g, block, game.currentPiece, 26,122, 20); //current piece
+
 				g.drawImage(block, //nextOne
 							(game.nextOne.x * 20) + 26 + (game.nextOne.xblocks[i] * 20), 65 + (game.nextOne.yblocks[i] * 20),
 							(game.nextOne.x * 20) + 46 + (game.nextOne.xblocks[i] * 20), 85 + (game.nextOne.yblocks[i] * 20),
@@ -113,6 +106,16 @@ public class Renderer extends JFrame{
 	                (int)(waitTime % 1000000));
 			}catch(Exception e){}
 			previoustime = System.nanoTime();
+		}
+	}
+
+	public void renderPiece(Graphics g, Image fill, Piece piece, int off1, int off2, int scale){
+		for(int i = 0; i < 4; i++){
+			g.drawImage(fill,
+				(piece.x * scale) + off1 + (piece.xblocks[i] * scale), off2 + (piece.yblocks[i] * scale),
+				(piece.x * scale) + off1 + scale + (piece.xblocks[i] * scale), off2 + scale + (piece.yblocks[i] * scale),
+				piece.piece * scale, 0,
+				(piece.piece * scale) + 20, 20, null);
 		}
 	}
 }
