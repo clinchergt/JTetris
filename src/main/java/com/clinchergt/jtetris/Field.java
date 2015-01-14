@@ -66,4 +66,15 @@ public class Field{
 
 		System.out.println();
 	}
+
+	public boolean validPosition(Piece p){
+		if((field[p.x + p.xblocks[0]][p.y + p.yblocks[0]] ||
+				field[p.x + p.xblocks[1]][p.y + p.yblocks[1]] ||
+				field[p.x + p.xblocks[2]][p.y + p.yblocks[2]] ||
+				field[p.x + p.xblocks[3]][p.y + p.yblocks[3]])){
+			return false;
+		}
+
+		return true;
+	}
 }

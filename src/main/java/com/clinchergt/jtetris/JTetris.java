@@ -82,8 +82,12 @@ public class JTetris{
 					}
 					if(direction == 1){
 						shiftRight();
+						if(!field.validPosition(currentPiece))
+							shiftLeft();
 					}else if(direction == -1){
 						shiftLeft();
+						if(!field.validPosition(currentPiece))
+							shiftRight();
 					}
 				}else{
 					if(inputs.contains(left)){

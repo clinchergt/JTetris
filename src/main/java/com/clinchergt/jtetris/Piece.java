@@ -1,7 +1,7 @@
 package com.clinchergt.jtetris;
 
 public class Piece{
-	int piece, cstate, x, length;
+	int piece, cstate, x, y, length;
 	int[] xblocks, yblocks;
 	public static final int
 		I = 0,
@@ -39,6 +39,7 @@ public class Piece{
 		for(int i = 0; i < yblocks.length; i++)
 			yblocks[i] = Y_STATES[piece][0][i];
 		x = 3;
+		y = 20;
 		if(n == 0){
 			length = 4;
 		}else if(n == 6){
@@ -109,6 +110,7 @@ public class Piece{
 			if(x + xblocks[i] >= 10 || x + xblocks[i] < 0)
 				return false;
 		}
+
 		return true;
 	}
 }
